@@ -1,0 +1,21 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "frontend for LocalVocal",
+    "author": "miri-san-so",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@capacitor/cli": "^2.2.0",
+        "@capacitor/core": "^2.2.0",
+        "@nuxtjs/axios": "^5.11.0",
+        "@nuxtjs/pwa": "^3.0.0-0",
+        "nuxt": "^2.0.0"
+    },
+    "devDependencies": {}
+}

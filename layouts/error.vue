@@ -1,0 +1,59 @@
+<template>
+    <div class="container">
+        <h1 v-if="error.statusCode === 404">Page not found :(</h1>
+        <h1 v-else>Oh, no! This page does not exist.</h1>
+        <img width="100%" src="~assets/error-404-2.webp" alt="compass" />
+        <nuxt-link to="/">Take me home!</nuxt-link>
+    </div>
+</template>
+
+<script>
+export default {
+    props: ["error"],
+    mounted() {
+        this.$store.commit("showTab");
+    },
+    beforeDestroy() {
+        this.$store.commit("hideTab");
+    }
+};
+</script>
+
+<style scoped>
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 1.25rem;
+    height: calc(100vh - 5.5rem);
+}
+
+h1 {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+img {
+    margin: 5rem 0;
+}
+
+a {
+    padding: 1rem 2rem;
+    font-family: "Open Sans", sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 3rem;
+}
+
+@media (min-width: 600px) {
+    img {
+        margin: 2rem 0;
+        width: 30%;
+    }
+}
+</style>
